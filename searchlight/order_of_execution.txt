@@ -1,0 +1,4 @@
+Order of execution:
+1. Run searchlight_sim.m
+2. post_process.m
+3. boxplot_from_post_results.m

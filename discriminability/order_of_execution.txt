@@ -1,0 +1,3 @@
+Order of execution:
+1. Run discriminability.m
+2. post_process_disc.m

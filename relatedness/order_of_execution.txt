@@ -1,0 +1,3 @@
+Order of execution:
+1. Run relatedness.m
+2. post_process.m
