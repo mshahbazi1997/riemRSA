@@ -35,13 +35,13 @@ for i_meas = 1 : n_meas
     for j_meas = 1 : n_meas
         measure_j = measures{j_meas};
 
-        p(i_meas, j_meas) = signrank(F1_cell.(measure_i), F1_cell.(measure_j), 'tail', 'right')/2;
+        p(i_meas, j_meas) = signrank(F1_cell.(measure_i), F1_cell.(measure_j), 'tail', 'right');
     end
 end
     
-
+pTh = FDRthreshold(p(1,2:end),0.05,1);
 %%
-fig = figure
+fig = figure;
 hold on
 
 h_box = boxplot(F1_seed_meas, 'symbol', '');
@@ -65,7 +65,7 @@ for j_measure = 1 : n_meas
         continue
     end
     
-    if p(riem_idx, j_measure) > 0.05
+    if p(riem_idx, j_measure) > pTh
         continue
     end
     
