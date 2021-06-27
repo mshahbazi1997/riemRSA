@@ -80,7 +80,7 @@ end
 d = consistency_roi_measure; %randi(10, 20, 3);
 
 
-
+pThreshold = FDRthreshold(pval_matrix(1,2:end),0.05,1);
 
 Fig = figure;
 
@@ -115,7 +115,7 @@ for i_measure = 1 : n_measure
         continue
     end
     
-    if pval_matrix(riem_idx, i_measure)>0.05
+    if pval_matrix(riem_idx, i_measure)>pThreshold
         continue
     end
     

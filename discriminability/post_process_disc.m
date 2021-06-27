@@ -55,6 +55,7 @@ x = repmat((1:n_measure)',1,size(d,1));
 plot(x,d','-o', 'color',[0.9 0.9 0.9],'MarkerEdgeColor',[0.6 0.6 0.6], 'MarkerFaceColor',[0.6 0.6 0.6],'MarkerSize',2)
 
 hold on
+pThreshold = FDRthreshold(pval_matrix(1,2:end),0.05,1);
 
 
 
@@ -87,7 +88,7 @@ for i_measure = 1 : n_measure
         continue
     end
     
-    if pval_matrix(riem_idx, i_measure)>0.05
+    if pval_matrix(riem_idx, i_measure)>pThreshold
         continue
     end
     
